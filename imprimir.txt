@@ -1,0 +1,23 @@
+	public void imprimir() {
+		FileWriter fw = null;
+		PrintWriter pw = null;
+		try {
+			fw = new FileWriter("./solucion.out");
+			pw = new PrintWriter(fw);
+
+			if (resolverSistema(coeficientes, resultados)) {
+				pw.print(incognitas.getDimension() + "\n");
+				for (int i = 0; i < incognitas.getDimension(); i++) {
+					pw.println(incognitas.getArray()[i]);
+
+				}
+				pw.println("\n" + verError());
+			} else
+				pw.println("El Sistema no tiene Solución.");
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		pw.close();
+
+	}
