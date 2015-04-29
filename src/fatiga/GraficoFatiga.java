@@ -18,7 +18,7 @@ public class GraficoFatiga {
 		try {
 			fw = new FileWriter("./grafico.out");
 			pw = new PrintWriter(fw);
-			for (int caso = 1; caso < 10000; caso++) {
+			for (int caso = 1; caso < 1000; caso++) {
 				double[][] mat = new double[caso][caso];
 				double[] vec = new double[caso];
 				for (int i = 0; i < caso; i++)
@@ -29,6 +29,10 @@ public class GraficoFatiga {
 				SEL sel = new SEL(new MatrizMath(mat, caso), new VectorMath(vec, caso), caso);
 				sel.resolverSistema();
 				pw.println(sel.getTiempo());
+				if (caso % 100 == 0) {
+					System.out.println("Progreso: " + caso / 10 + "%");
+					pw.flush();
+				}
 			}
 
 		} catch (IOException e) {

@@ -1,0 +1,7 @@
+set xlabel "Dimensión matriz (n * n)"
+set ylabel "Tiempo (ms)"
+set title "Rendimiento algoritmo SEL"
+set grid
+set terminal png size 1000,1000 enhanced font "Helvetica,20"
+set output "grafico_rendimiento.png"
+plot "grafico.out" notitle lt rgb "red" smooth sbezier, "grafico.out" w dots notitle lt rgb "red"
