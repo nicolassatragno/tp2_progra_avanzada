@@ -9,6 +9,12 @@ import sistemaEcuacionLineal.MatrizMath;
 import sistemaEcuacionLineal.SEL;
 import sistemaEcuacionLineal.VectorMath;
 
+/**
+ * Genera un archivo con el tiempo en ms que tarda el algoritmo para matrices desde 1x1 hasta 1000x1000,
+ * cada tiempo separado por un salto de línea.
+ * @author nicolas
+ *
+ */
 public class GraficoFatiga {
 
 	public static void main(String[] args) {
